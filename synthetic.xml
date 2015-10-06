@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<synthetic xsi:schemaLocation="http://www.xebialabs.com/deployit/synthetic synthetic.xsd" xmlns="http://www.xebialabs.com/deployit/synthetic" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<type type="xlt.uftxml" extends="xlt.TestToolConfiguration" label="HP UFT">
+        <property name="category" default="functional"/>
+        <property name="defaultSearchPattern" default="**/**/run_*.xml"/>
+        <property name="scriptLocation" default="resultparser/uft4.py"/>
+    </type>
+    <!--
+    <type type="xlt.uftoldxml" extends="xlt.TestToolConfiguration" label="HP UFT CUKE">
+        <property name="category" default="functional"/>
+        <property name="defaultSearchPattern" default="**/run_*.xml"/>
+        <property name="scriptLocation" default="resultparser/uft_old.py"/>
+    </type>
+  -->
+    <type type="xlt.macyscsv" extends="xlt.TestToolConfiguration" label="macys csv">
+        <property name="category" default="performance"/>
+        <property name="defaultSearchPattern" default="**/macys_*.csv"/>
+        <property name="scriptLocation" default="resultparser/macys_custom.py"/>
+    </type>
+    <type type="xlt.xunit" extends="xlt.TestToolConfiguration" label="xUnit">
+        <property name="category" default="performance"/>
+        <property name="defaultSearchPattern" default="**/TEST-*.xml"/>
+        <property name="scriptLocation" default="parser/xunit.py"/>
+    </type>
+    <type type="xlt.XlrImport" extends="xlt.TestToolConfiguration" label="XL Release">
+		<property name="category" default="functional"/>
+		<property name="defaultSearchPattern" default="**/*.json"/>
+		<property name="scriptLocation" default="resultparser/XlrImport.py"/>
+	</type>
+   <!--  <type type="custom.MyTestToolConfiguration"
+        extends="xlt.TestToolConfiguration"
+        label="My custom tool">
+      <property name="category" default="functional"/>
+      <property name="defaultSearchPattern" default="**/run_*.xml"/>
+      <property name="language" default="python"/>
+      <property name="scriptLocation" default="resultparser/custom-script.py"/>
+
+  </type> -->
+</synthetic>
