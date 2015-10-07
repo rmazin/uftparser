@@ -61,6 +61,10 @@ for file in files:
         # just log a bit about what we skip
         print "Skipping file ", str(file)
     else:
+        dir = str(file)
+        os.chdir(dir.replace("local:", "")+'/../..')
+        check = os.path.basename(os.path.normpath(os.getcwd()))
+        np = os.getcwd()
         # print "FILE: ", file
         root = get_root_node(file)
         # Use endswith instead of equals to handle xml namespaces
@@ -125,7 +129,7 @@ for file in files:
                                 print "UTC: ", utc
                                 print "Failure: ", failure
                                 print "Type: ", type
-                                hierarchy = ["UFT Tests", str(tcName.replace(" ", "_"))]
+                                hierarchy = ["UFT Tests", str(check), str(tcName.replace(" ", "_"))]
                                 print hierarchy
 
                                 testCase = str(tcName), str(tcResult), int(elapsed), str(failure), int(utc)
